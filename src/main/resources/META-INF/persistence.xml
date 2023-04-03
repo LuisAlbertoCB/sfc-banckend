@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="pruebaPU">
+    <!-- If you are running in a production environment, add a managed 
+         data source, this example data source is just for development and testing! -->
+    <!-- The datasource is deployed as ${ds-deployment-location}, you
+         can find it in the source at postgres_local-ds.xml -->
+    <jta-data-source>java:jboss/datasources/laboratorio</jta-data-source>
+    <class>py.com.progweb.sfc.entity.VencimientoPuntos</class>
+    <class>py.com.progweb.sfc.entity.Cliente</class>
+    <class>py.com.progweb.sfc.entity.BolsaPuntos</class>
+    <class>py.com.progweb.sfc.entity.ConceptoUsoPuntos</class>
+    <class>py.com.progweb.sfc.entity.DetalleUsoPuntos</class>
+    <class>py.com.progweb.sfc.entity.ReglaAsignacionPuntos</class>
+    <class>py.com.progweb.sfc.entity.CabeceraUsoPuntos</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/SFC"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="luis"/>
+      <property name="hibernate.id.new_generator_mappings" value="true"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="validate"/>
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
